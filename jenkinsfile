@@ -4,12 +4,12 @@ pipeline {
          stage('Build') {
              steps {
                  sh 'echo "Building"'
-         }   
+                }   
          stage('Input') {
-            steps {
+             steps {
                 input('Do you want to proceed?')
+             }
             }
-        }
          stage('If Proceed is clicked') {
          stage('Upload to AWS') {
               steps {
@@ -19,7 +19,7 @@ pipeline {
                   }
                 }
             }    
-         }
-      }  
-  }
+        }
+        }  
+    }
 }
