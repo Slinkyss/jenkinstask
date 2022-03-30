@@ -1,6 +1,6 @@
 pipeline {
      agent any
-     stages {
+   stages {
          stage('Build') {
              steps {
                  sh 'echo "Building"'
@@ -17,7 +17,9 @@ pipeline {
                   sh 'echo "Uploading content with AWS creds"'
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'first-stack.yaml', bucket:'jenkinsslinkisbucket')
                   }
-              }
+                }
+            }    
          }
-     }
+      }  
+  }
 }
