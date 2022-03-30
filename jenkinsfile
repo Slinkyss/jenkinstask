@@ -19,13 +19,12 @@ pipeline {
                   }
               }
          }
-     }
-         stage('If Abort is clicked') {
+                 stage('If Abort is clicked') {
             steps {
                 sh 'echo "Creating reverse branch"'
                 
-                }
-
             }
+
+     }
     }
 }
