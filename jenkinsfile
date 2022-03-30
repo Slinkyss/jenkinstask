@@ -9,7 +9,9 @@ pipeline {
          stage('Input'){
                          steps {
                 input('Do you want to proceed?')
-                stage('Upload to AWS') {
+            }
+        }
+         stage('Upload to AWS') {
               steps {
                   withAWS(region:'eu-west-1',credentials:'testcred') {
                   sh 'echo "Uploading content with AWS creds"'
@@ -17,15 +19,22 @@ pipeline {
                   }
               }
          }
-            }
-        }
-         
-        stage('If Abort is clicked') {
-            steps {
-                sh 'echo "Creating reverse branch"'
-                
-            }
 
      }
+     post {
+
+        success {
+            echo 'I succeeded!'
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+            echo 'I failed :('
+        }
+        aborted {
+            echo 'USER STOPPED ME :@'
+        }
+
     }
 }
