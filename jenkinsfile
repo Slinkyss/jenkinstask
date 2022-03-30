@@ -1,25 +1,23 @@
 pipeline {
      agent any
-   stages {
+     stages {
          stage('Build') {
              steps {
                  sh 'echo "Building"'
-                }   
-         stage('Input') {
-             steps {
-                input('Do you want to proceed?')
              }
+         }
+         stage('Input'){
+                         steps {
+                input('Do you want to proceed?')
             }
-         stage('If Proceed is clicked') {
+        }
          stage('Upload to AWS') {
               steps {
                   withAWS(region:'eu-west-1',credentials:'testcred') {
                   sh 'echo "Uploading content with AWS creds"'
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'first-stack.yaml', bucket:'jenkinsslinkisbucket')
                   }
-                }
-            }    
-        }
-        }  
-    }
+              }
+         }
+     }
 }
