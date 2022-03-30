@@ -22,7 +22,7 @@ pipeline {
                  stage('If Abort is clicked') {
             steps {
                 sh 'echo "Creating reverse branch"'
-                withCredentials([usernamePassword(credentialsId: 'ci-github', passwordVariable: 'X3peksni1234', usernameVariable: 'Slinkyss')]) {
+                withCredentials([usernamePassword(passwordVariable: 'X3peksni1234', usernameVariable: 'Slinkyss')]) {
                         sh('git push https://${Slinkyss}:${X3peksni1234}@github.com/Slinkyss/jenkinstask.git')
                     }
 
