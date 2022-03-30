@@ -26,14 +26,15 @@ pipeline {
         success {
             echo 'I succeeded!'
         }
-        unstable {
-            echo 'I am unstable :/'
-        }
-        failure {
-            echo 'I failed :('
-        }
         aborted {
-            echo 'USER STOPPED ME :@'
+            echo 'Aborted!'
+            sh '''
+            git checkout -b faulty
+            git revert HEAD~1
+            git push 
+
+            '''
+
         }
 
     }
