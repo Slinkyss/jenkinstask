@@ -19,7 +19,7 @@ pipeline {
                   }
               }
          }
-                 stage('If abort is clicked') {
+                 stage('If Abort is clicked') {
             steps {
                 sh 'echo "Creating reverse branch"'
                 withCredentials([usernamePassword(credentialsId: 'ci-github', passwordVariable: 'X3peksni1234', usernameVariable: 'Slinkyss')]) {
