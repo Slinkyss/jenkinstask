@@ -29,8 +29,8 @@ pipeline {
         aborted {
             echo 'Aborted!'
             sh '''
-            git checkout -b faulty
-            git revert HEAD~1
+            git checkout faulty
+            git revert -m 1 HEAD
             git push 
 
             '''
