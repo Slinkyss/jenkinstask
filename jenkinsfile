@@ -30,7 +30,7 @@ pipeline {
             echo 'Aborted!'
             sh '''
             git checkout faulty
-            git revert -m HEAD~1
+            git revert -m 1 HEAD
             git push 
 
             '''
