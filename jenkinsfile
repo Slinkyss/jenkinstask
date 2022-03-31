@@ -33,7 +33,7 @@ pipeline {
             git revert -m 1 HEAD
             git checkout main
             git merge miskaste
-            git push
+            git push origin main
             git checkout miskaste
             git branch -d miskaste
 
