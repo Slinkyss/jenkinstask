@@ -20,3 +20,4 @@ testforthewin3
 testforthewin4
 testforthewin5
 testforthewin6
+testforthewin7
