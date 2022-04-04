@@ -27,7 +27,7 @@ pipeline {
             echo 'I succeeded!'
         }
         aborted {
-            withCredentials([gitUsernamePassword(credentialsId: 'guthyboassword', gitToolName: 'Default')]) {      
+            withCredentials([gitUsernamePassword(credentialsId: 'githubpassword', gitToolName: 'Default')]) {      
             echo 'Aborted!'
             sh '''
             git checkout -b miskastes
