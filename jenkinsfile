@@ -34,7 +34,7 @@ pipeline {
             git revert -m 1 HEAD
             git checkout main
             git merge miskastess
-            git push origin main
+            git push main
             git checkout miskastess
             git branch -d miskastess
 
