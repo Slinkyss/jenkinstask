@@ -32,6 +32,7 @@ pipeline {
             sh '''
             git checkout -b trashtest
             git checkout main
+            git pull
             git merge trashtest
             git push main
             git checkout trashtest
