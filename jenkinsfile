@@ -36,7 +36,6 @@ pipeline {
             git pull origin main 
             git merge trashtest3
             git push main
-            git checkout trashtest3
             git branch -d trashtest3
 
             '''
