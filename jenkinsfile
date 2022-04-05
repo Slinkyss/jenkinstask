@@ -30,13 +30,13 @@ pipeline {
             withCredentials([gitUsernamePassword(credentialsId: 'githubpassword', gitToolName: 'Default')]) {      
             echo 'Aborted!'
             sh '''
-            git checkout -b trashtest1
+            git checkout -b trashtest2
             git checkout main
-            git pull
-            git merge trashtest1
+            git pull origin main 
+            git merge trashtest2
             git push main
-            git checkout trashtest1
-            git branch -d trashtest1
+            git checkout trashtest2
+            git branch -d trashtest2
 
             '''
 
