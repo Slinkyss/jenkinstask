@@ -30,10 +30,12 @@ pipeline {
             withCredentials([gitUsernamePassword(credentialsId: 'githubpassword', gitToolName: 'Default')]) {      
             echo 'Aborted!'
             sh '''
+            git rm transitfile.txt
             git checkout -b trashtest3
             git revert -m 1 HEAD  
             git checkout main
-            git pull origin main 
+            git pull origin main
+            git rm transitfile.txt 
             git merge trashtest3
             git push main
             git branch -d trashtest3
